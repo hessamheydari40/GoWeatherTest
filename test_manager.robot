@@ -4,18 +4,16 @@ Library         customLibrary/everyThing.py
 
 
 *** Test Cases ***
-FindDegreeMore50testcase
+scrollScreenshotAndprecipitation
     [Tags]    DEBUG
+    open app
+    forecast tab Click
+    scrooll
+    screenshot
+MostPuplarcityDegreeAssertion
     open app
     click main menu
     add city
     popular city
-    should be equal  find degree more than 50   0
-
-FindPrecipitation
-    open app
-    forecast tab Click
-    scrool29
-screenshot
-    open app
-    screenshot
+    ${degree}=   find degree is 50
+    should be true  ${degree}

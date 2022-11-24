@@ -10,3 +10,8 @@ class Actions():
         driver.implicitly_wait(timeout)
         el = driver.find_element(by=by, value=locator)
         return el
+    def finds(self, by , locator= None, timeout=3 ):
+        driver = self.session_handler.get_session_instance()
+        driver.implicitly_wait(timeout)
+        el = driver.find_elements(by=by, value=locator)
+        return el

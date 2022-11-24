@@ -11,47 +11,34 @@ class everyThing(Actions):
     def __init__(self):
         super().__init__()
 
-
-    def scrool_to_find_precipitation(self):
-        actions = TouchAction(self.driver)
-        actions.scroll_from_element(forecastButton, x=90, y=1330)
-        actions.scroll(x=90, y=170)
-        actions.perform()
-
-
-    def scrool29(self):
-        el1 = self.driver.find(by=By.XPATH, locator=forecastButton)
-        el2 = self.driver.find(by=By.XPATH, locator=precipitationText)
-        self.driver.scroll(el1, el2)
-
+    def scrooll(self):
+        el1 = self.find(by=By.XPATH, locator=forecastButton)
+        el2 = self.find(by=By.XPATH, locator=precipitationText)
+        driver = AppuimSessionHandler.get_session_instance()
+        driver.scroll(el2, el1)
 
     def click_main_menu(self):
         self.find(By.ID, mainMenu).click()
 
-
     def open_app(self):
         self.session_handler.open_application()
-
 
     def forecast_tab_Click(self):
         self.find(By.XPATH, forecastButton).click()
 
-
     def add_city(self):
         self.find(By.ID, addLocation).click()
 
-
     def popular_city(self):
-        self.find(by=By.XPATH, locator=firstPopularCity).click()
+        self.finds(by=By.ID, locator="addcity_list_item")[0].click()
 
+    def find_degree_is_50(self):
+        degree = int((self.find(by=By.ID, locator=currentPageWeather).text).split("°")[0])
 
-    def find_degree_more_than_50(self):
-        degree = self.find(by=By.ID, locator=currentPageWeather)
-        if degree >= 50:
-            return 1
+        if degree != 50:
+            return True
         else:
-            return 0
-
+            return False
 
     def screenshot(self):
         screenshot_dir = Path(__file__).parent.parent
