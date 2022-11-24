@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.9.7 on win32)" generated="20221124 13:58:49.007" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Manager" source="C:\Users\Nobitex\PycharmProjects\GoWeather Test\test_manager.robot">
+<test id="s1-t1" name="FindPrecipitation" line="15">
+<kw name="Open App" library="everyThing">
+<status status="PASS" starttime="20221124 13:58:49.505" endtime="20221124 13:59:17.190"/>
+</kw>
+<kw name="Forecast Tab Click" library="everyThing">
+<status status="PASS" starttime="20221124 13:59:17.191" endtime="20221124 13:59:21.852"/>
+</kw>
+<kw name="Scrool 29" library="everyThing">
+<msg timestamp="20221124 13:59:21.853" level="FAIL">AttributeError: 'everyThing' object has no attribute 'driver'</msg>
+<status status="FAIL" starttime="20221124 13:59:21.852" endtime="20221124 13:59:21.854"/>
+</kw>
+<status status="FAIL" starttime="20221124 13:58:49.504" endtime="20221124 13:59:21.854">AttributeError: 'everyThing' object has no attribute 'driver'</status>
+</test>
+<doc>Suite description</doc>
+<status status="FAIL" starttime="20221124 13:58:49.012" endtime="20221124 13:59:21.855"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Manager">Test Manager</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
